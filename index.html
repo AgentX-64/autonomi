@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Free Video Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .video-container {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Watch This Free Video</h1>
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+      title="Sample Free Video" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</body>
+</html>
