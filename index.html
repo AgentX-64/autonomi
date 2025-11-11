@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Embedded Free Video Example</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Embedded Video</title>
 
-    h1 {
-      color: #333;
-    }
-
-    .video-container {
-      position: relative;
-      width: 80%;
-      max-width: 800px;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+  <!-- Local tiny Tailwind-like utilities (not the full Tailwind framework) -->
+  <link rel="stylesheet" href="tailwind.css" />
 </head>
-<body>
+<body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+  <header class="py-8">
+    <h1 class="text-center text-3xl font-bold tracking-tight">Watch This Free Video</h1>
+    <p class="text-center mt-2 text-slate-600">Fully responsive embed. Replace the URL with your own.</p>
+  </header>
 
-  <h1>Watch This Free Video</h1>
-  <div class="video-container">
-    <iframe 
-      src="https://www.youtube.com/embed/tgbNymZ7vqY" 
-      title="Sample Free Video" 
-      allowfullscreen>
-    </iframe>
-  </div>
+  <main class="container mx-auto px-4">
+    <div class="mx-auto max-w-4xl rounded-2xl shadow-md overflow-hidden bg-white">
+      <!-- Responsive aspect box -->
+      <div class="relative w-full aspect-video">
+        <iframe
+          class="absolute inset-0 h-full w-full"
+          src="https://www.youtube.com/embed/tgbNymZ7vqY"
+          title="Sample Free Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
 
+      <div class="p-6">
+        <h2 class="text-xl font-semibold">About this embed</h2>
+        <p class="mt-2 text-slate-600">
+          This uses a lightweight utility stylesheet with an <code>aspect-video</code> class for a 16:9 responsive frame.
+          Replace the <code>src</code> with any public video embed link (YouTube, Vimeo, Pexels, etc.).
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-12 text-center text-sm text-slate-500">
+    © <span id="year"></span>
+  </footer>
+
+  <script>
+    // Small nicety: set the footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
