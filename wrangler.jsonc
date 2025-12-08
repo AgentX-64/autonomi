@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/schemas/wrangler.json",
-  "name": "static-site",
+  "name": "autonomi",
   "compatibility_date": "2025-12-08",
   "assets": {
     "directory": "public"
